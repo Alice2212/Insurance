@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agents</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" />
+
+  <style>
+    .invite-agent::placeholder {
+      font-size: 1.188rem;
+    }
+
+    .invite-agent:focus {
+      border: 1px solid #1E90FF;
+      outline: none;
+    }
+  </style>
+
+</head>
+
+<body class="h-screen w-screen font-Lato">
+
+  <main class="border border-black flex flex-row justify-center items-center mx-auto w-full lg:pl-[6rem] border-gray-950">
+
+    <!-- Left coloum form -->
+
+    <div class="h-screen lg:w-[50%]">
+      <!-- Logo -->
+      <img src="./assets/user authentication/insure-logo.png" alt="INSure logo" class="w-20 h-12 lg:w-24 lg:h-14 mb-12 mt-3"/>
+
+
+      <h1 class="mb-2 text-[2.5rem]">
+        Invite Agents </h1>
+      <p class="mb-5">
+        Collaborate with your team to get the most out of <span class="text-red-500">INsure</span>
+      </p>
+      <!-- The form area -->
+      <form class="">
+        <!-- First field -->
+        <div class="">
+          <input type="email" id="email" name="email" placeholder="Add email here"
+            class="invite-agent w-[20rem] px-3 py-2 border rounded-md border border-gray-500" />
+        </div>
+        <!-- Second field -->
+        <div class="mt-3">
+          <input type="email" id="email" name="email" placeholder="Add email here"
+            class="invite-agent w-[20rem] px-3 py-2 border rounded-md border border-gray-500" />
+        </div>
+        <!-- Third field -->
+        <div class="mt-3">
+          <input type="email" id="email" name="email" placeholder="Add email here"
+            class="invite-agent w-[20rem] px-3 py-2 border rounded-md border border-gray-500" />
+        </div>
+
+        <!-- the button -->
+        <button type="button" class="w-[8rem] bg-orange-600 text-white py-2 px-2 rounded-md hover:bg-orange-400 mt-6">
+          + Add another
+        </button>
+
+        <!-- Linked button -->
+        <div class="flex flex-row mt-24 justify-between items-center pr-20">
+          <p class=""><a href="./homeAdminDashboard.html" class="text-orange-600">Remind me later</a></p>
+          <button type="submit"
+            class="bg-orange-600 text-white font-normal py-2 px-4 rounded-md hover:bg-orange-400 ">Invite
+            your team</button>
+        </div>
+      </form>
+    </div>
+    <!-- Right Column (image)  -->
+    
+      <img src="../template/images/handshak.png" alt="Registration Image" class="w-1/2 h-[100vh] hidden lg:block"/>
+  </main>
+  <script type="module" src="/template/regSign.js"></script>
+</body>
+
+</html>

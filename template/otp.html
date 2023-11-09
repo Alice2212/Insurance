@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css" />
+    <style>
+        .otp:focus {
+            border: 1px solid #1E90FF;
+            outline: none;
+        }
+    </style>
+
+</head>
+
+<body class="h-screen bg-gray-100 font-lato w-screen">
+    <main class="flex items-center justify-center w-full h-full lg:pl-[6rem]">
+
+        <div class="lg:w-[50%] h-screen mx-auto">
+            <!-- Logo Section -->
+
+            <img src="./assets/user authentication/insure-logo.png" alt="Insure Logo"
+                class="ml-1 mt-3 w-20 h-12 lg:w-24 lg:h-14">
+
+
+            <!-- Enter the Code -->
+            <div class="mb-4 mt-20">
+                <p class="mb-4 text-4xl font-bold">Enter the code</p>
+                <p class="mb-16 text-sm ">Enter the OTP code that we sent to your email
+                    <span class="font-bold">gt**@gmail.com</span>
+                    . Be<br> careful not to share the code with anyone.
+                </p>
+                
+                <!-- OTP Boxes -->
+                <form action="">
+                    
+                    <div class="flex flex-row mb-10 space-x-2 lg:space-x-4">
+                        <!-- Five small square boxes -->
+                        <input type="text" id="otp1" name="otp1" maxlength="1" oninput="moveToNextOrPreviousInput(this, 'otp2', 'otp1')"
+                            class="otp w-12 lg:w-16 bg-gray-300 rounded h-14 text-center" />
+                        <input type="text" id="otp2" name="otp2" maxlength="1" oninput="moveToNextOrPreviousInput(this, 'otp3', 'otp1')"
+                            class="otp w-12 lg:w-16 bg-gray-300 rounded h-14 text-center" />
+                        <input type="text" id="otp3" name="otp3" maxlength="1" oninput="moveToNextOrPreviousInput(this, 'otp4', 'otp2')"
+                            class="otp w-12 lg:w-16 bg-gray-300 rounded h-14 text-center" />
+                        <input type="text" id="otp4" name="otp4" maxlength="1" oninput="moveToNextOrPreviousInput(this, 'otp5', 'otp3')"
+                            class="otp w-12 lg:w-16 bg-gray-300 rounded h-14 text-center" />
+                        <input type="text" id="otp5" name="otp5" maxlength="1" oninput="moveToPreviousInput(this, 'otp4')"
+                            class="otp w-12 lg:w-16 bg-gray-300 rounded h-14 text-center" />
+    
+                    </div>
+                    <!-- Verify Email Button -->
+                    <button class="w-[20rem] lg:w-[24rem] py-2 mb-2 text-white bg-orange-500 rounded px-14 hover:bg-orange-600"> <a
+                            href="setNewPass.html">Verify
+                            Email</button></a>
+    
+                    <!-- Resend OTP Link -->
+                    <div class="flex flex-row justify-end w-[20rem] lg:w-[24rem]">
+                        <p class="text-sm font-medium">
+                            <a href="#" class=" hover:underline">Resend OTP</a>
+                        </p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Right-hand Side Image -->
+        <div class="hidden lg:block lg:w-1/2 h-screen">
+            <img src="./assets/user authentication/insure-otp-image.png" alt="" class="w-full h-full">
+        </div>
+    </main>
+    <script>
+        function moveToNextOrPreviousInput(currentInput, nextInputId, previousInputId) {
+            if (currentInput.value.length === 1) {
+                const nextInput = document.getElementById(nextInputId);
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            } else if (currentInput.value.length === 0) {
+                const previousInput = document.getElementById(previousInputId);
+                if (previousInput) {
+                    previousInput.focus();
+                }
+            }
+        }
+
+        function moveToPreviousInput(currentInput, previousInputId) {
+            if (currentInput.value.length === 0) {
+                const previousInput = document.getElementById(previousInputId);
+                if (previousInput) {
+                    previousInput.focus();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
